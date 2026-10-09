@@ -1,4 +1,4 @@
-name: Validate static websites
+name: Validate STLab
 on:
   push:
   pull_request:
@@ -10,8 +10,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify JavaScript syntax
-        run: |
-          for file in schedule-studio/*.js table-studio/*.js astro-catalog/*.js; do node --check "$file"; done
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build static Next.js output
+        run: npm run build
       - name: Validate HTML references
         run: python3 tools/check_static.py

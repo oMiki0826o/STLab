@@ -1,63 +1,95 @@
-# Small Things Lab — GitHub Pages 網頁工具初版
+# Small Things Lab (STLab)
 
-這份試作包收錄三個**不需要後端、資料庫伺服器或 API 金鑰**的 Web App，以及一個作品入口首頁。你可以直接將整個資料夾作為一個 GitHub Pages 專案發布，也可以將三個工具拆成獨立倉庫。
+Small Things Lab is a collection of focused, offline-friendly web tools built with Next.js and TypeScript.
 
-| 專案 | 入口 | 目前已完成 |
+Small Things Lab 是一系列專注、離線友善的單一用途 Web App，使用 Next.js 與 TypeScript 開發。
+
+## Current status / 目前狀態
+
+`v0.1.0` is an initial foundation release. The application is exported as static HTML and is designed for GitHub Pages. User data is kept in the browser unless the user explicitly exports it.
+
+`v0.1.0` 是初始基礎版本。目前使用 Static Export 產生靜態網站，適合部署到 GitHub Pages。除非使用者主動匯出，資料會保留在瀏覽器本機。
+
+## Tools / 工具
+
+| Tool / 工具 | Route / 路由 | Implemented / 已實作 |
 | --- | --- | --- |
-| Schedule Studio | `schedule-studio/index.html` | 課表格子編輯、5–7 天、4–12 節、配色、設定自動儲存、PNG/JSON 匯出與 JSON 匯入 |
-| Table Studio | `table-studio/index.html` | 表格儲存格編輯、增減列欄、整區貼上、CSV/JSON 匯入、PNG/CSV/Markdown/JSON 匯出 |
-| AstroCatalog | `astro-catalog/index.html` | 35 筆精選梅西爾天體搜尋、分類篩選、收藏、幾何高度角曲線、望遠鏡視野尺寸試算 |
+| Schedule Studio | `/schedule/` | Weekly schedule cells, local persistence, JSON export / 每週課表編輯、本機儲存、JSON 匯出 |
+| Table Studio | `/table/` | Experimental chart mode, axis labels and units, scale limits, coordinate input, live SVG line chart / 實驗圖表模式、軸名稱與單位、最大值、刻度間距、座標輸入、SVG 折線圖 |
+| AstroCatalog | `/astro/` | Search, type filter, curated catalog, local favorites / 搜尋、類型篩選、精選天體資料、收藏 |
 
-## 介面預覽
+The repository also keeps the original static prototype under `schedule-studio/`, `table-studio/`, and `astro-catalog/` for comparison and regression checks. The active Next.js application lives under `app/` and `lib/`.
 
-![Schedule Studio](previews/schedule.png)
+本倉庫仍保留 `schedule-studio/`、`table-studio/`、`astro-catalog/` 原生靜態原型，用於比對與回歸檢查。目前使用中的 Next.js 應用程式位於 `app/` 與 `lib/`。
 
-![Table Studio](previews/table.png)
+## Requirements / 環境需求
 
-![AstroCatalog](previews/astro.png)
+- Node.js 22 or later / Node.js 22 或更新版本
+- npm
 
-## 本機測試
-
-直接以瀏覽器開啟根目錄的 `index.html`，即可測試三個工具。為了模擬正式網站的網址與瀏覽器儲存行為，建議改用簡易靜態 HTTP 伺服器：
+## Local development / 本機開發
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-然後開啟 `http://localhost:8000`。上述 Python 指令只是本機開發用的靜態檔案伺服器，**上線不需要執行 Python**。
+Open `http://localhost:3000` in a browser. / 請在瀏覽器開啟 `http://localhost:3000`。
 
-## GitHub Pages 部署
+## Verification / 驗證
 
-1. 新增一個公開 GitHub Repository，例如 `small-things-lab`。
-2. 將 `index.html` 與三個子資料夾推送至 Repository 的 `main` 分支。
-3. 前往倉庫的 **Settings → Pages → Build and deployment**。
-4. Source 選 **Deploy from a branch**，分支選 `main`，資料夾選 `/ (root)`，儲存。
-5. 網站網址將是 `https://<username>.github.io/small-things-lab/`。由於所有資源都採相對路徑，放在子路徑下也能正常運作。
+```bash
+npm test
+npm run typecheck
+npm run build
+python3 tools/check_static.py
+```
 
-### 拆成獨立網站
+The build uses `output: "export"` and writes the static site to `out/`. The legacy checker intentionally validates only the original static prototype and does not scan generated Next.js output.
 
-各工具的子資料夾都包含自己的 `index.html`、CSS 與 JS，沒有相互引用。把其中一個子資料夾內的檔案放到新倉庫的根目錄，就能獨立發布，例如：
+建置使用 `output: "export"`，靜態網站會輸出到 `out/`。舊版靜態檢查器刻意只檢查原生靜態原型，不會掃描 Next.js 產生的輸出內容。
 
-`https://<username>.github.io/schedule-studio/`
+## GitHub Pages / GitHub Pages 部署
 
-## 資料與隱私
+The project is compatible with GitHub Pages as a static export. Configure the repository Pages source according to the deployment method used by the repository. If the project is served below a repository path, set the corresponding base path when building, for example:
 
-- 課表與表格使用瀏覽器的 `localStorage` 儲存；天體收藏清單也存在本機。
-- 所有匯出作業都在瀏覽器完成，不會傳送使用者資料到後端。
-- 字型目前有外部 Google Fonts 載入，但載入失敗會改用系統字型，不影響主要功能。若希望完全不對外連線，可刪除 CSS 的 `@import`。
-- 清除瀏覽器網站資料可能會失去本機資料，建議定期匯出 JSON。
-- 不提供跨裝置同步、雲端備份或帳號登入。
+本專案可用 Static Export 部署到 GitHub Pages。請依倉庫採用的部署方式設定 Pages 來源。若網站位於 repository 子路徑，建置時設定對應的 base path，例如：
 
-## 初版限制
+```bash
+NEXT_PUBLIC_BASE_PATH=/STLab npm run build
+```
 
-- **Schedule Studio**：課程每格獨立編輯，暫不支援跨節課程合併、拖曳或自動排課。PNG 匯出不依賴截圖函式庫，而是使用 Canvas 重新繪製。
-- **Table Studio**：不是 Excel 替代品，不支援公式、合併儲存格或 XLSX 匯入；CSV 文字以盡量避免試算表公式注入的方式匯出。PNG 為避免過大畫布，最多可匯出 60 列、12 欄；完整資料可使用 CSV。
-- **AstroCatalog**：目前只有 35 筆精選資料；座標以 J2000 為主，高度角計算未納入歲差、章動、視差、折射、地形或即時大氣條件。FOV 顯示僅比較角直徑，不是精確星圖或實際照片。
+The generated `out/` directory is the deployment artifact. / 產生的 `out/` 目錄就是部署產物。
 
-## 天文資料來源
+## Privacy and offline approach / 隱私與離線方向
 
-AstroCatalog 的精選天體資料依照 [Bretton Wade / Yale Bright Star Catalog — Messier JSON](https://github.com/brettonw/YaleBrightStarCatalog) 整理，原專案採 MIT 授權。中文名稱是此試作版另外整理的顯示欄位。專案中保留出處與來源說明；正式擴充資料庫時應再次核對各資料集的授權要求。
+- No account, backend, database, or API key is required. / 不需要帳號、後端、資料庫或 API 金鑰。
+- Schedule, chart settings, and Astro favorites use browser `localStorage`. / 課表、圖表設定與天體收藏使用瀏覽器 `localStorage`。
+- Exported files are generated in the browser. / 匯出檔案在瀏覽器本機產生。
+- Clearing browser site data can remove local projects. Export JSON backups when needed. / 清除網站資料可能會刪除本機專案，請視需要匯出 JSON 備份。
+- Full PWA caching and install prompts are planned, but are not claimed as complete in `v0.1.0`. / 完整 PWA 快取與安裝提示列入後續規劃，`v0.1.0` 尚不宣稱已完成。
 
-## 專案狀態
+## Roadmap / 後續規劃
 
-`v0.1.0` — 初版試作，可用來驗證互動流程與介面設計。尚未執行跨瀏覽器完整測試，不應視為正式發行版。
+1. Schedule Studio: drag-and-drop editing, themes, print layout, PNG export / 拖曳編輯、主題、列印版面、PNG 匯出。
+2. Table Studio: richer table editing, CSV import/export, chart export, experiment record templates / 完整表格編輯、CSV 匯入匯出、圖表匯出、實驗紀錄模板。
+3. AstroCatalog: expanded catalog metadata, observation lists, telescope field-of-view tools / 擴充天體資料、觀測清單、望遠鏡視野工具。
+4. Shared offline capabilities: PWA cache, project backup, common export components / 共用離線能力、PWA 快取、專案備份與輸出元件。
+
+Roadmap items are proposals, not current functionality. / Roadmap 項目是規劃，不代表目前已完成的功能。
+
+## Governance / 開發治理
+
+Changes follow the repository's AI Development Governance principles: understand existing behavior before changing it, keep scope controlled, preserve the static prototype, verify after modification, and distinguish verified behavior from planned behavior.
+
+本專案依循 AI Development Governance：修改前先理解既有行為、控制範圍、保留原生靜態原型、修改後執行驗證，並清楚區分已驗證功能與規劃功能。
+
+Local workflow records are stored under `data/`, which is intentionally ignored by Git.
+
+本機工作流程紀錄放在 `data/`，該目錄已刻意加入 `.gitignore`，不會提交到 Git。
+
+## License / 授權
+
+See [LICENSE](LICENSE). Astro data attribution and source notes are kept with the relevant prototype data files.
+
+請參閱 [LICENSE](LICENSE)。天文資料的出處與授權說明會保留在相關原型資料檔案中。
