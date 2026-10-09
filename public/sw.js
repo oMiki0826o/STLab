@@ -1,4 +1,4 @@
-const CACHE_NAME = "stlab-v0.1-shell";
+const CACHE_NAME = "stlab-v0.1-shell-2";
 const APP_SHELL = ["./", "./schedule/", "./table/", "./astro/"];
 
 self.addEventListener("install", (event) => {
