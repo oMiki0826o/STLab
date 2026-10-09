@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f3">
+  <meta name="description" content="Schedule Studio：在瀏覽器製作、編輯並匯出漂亮的課表。無須登入，資料保留在本機。">
+  <title>Schedule Studio｜課表產生器</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="identity" href="./" aria-label="Schedule Studio 首頁"><span class="logo">S<span class="logo-star">✳</span></span><span>Schedule<span class="identity-light">Studio</span></span></a>
+    <div class="toplinks"><span class="privacy-pill"><i></i> 資料只存在這台裝置</span><span class="version">BETA / 0.1</span></div>
+  </header>
+  <main class="shell">
+    <div class="intro">
+      <div><p class="eyebrow">DESIGN YOUR WEEK</p><h1>把每一天，<br><em>排得剛剛好。</em></h1><p class="intro-copy">一份真正屬於你的課表。自由編輯課程、調整配色，完成後直接下載成圖片。</p></div>
+      <div class="intro-art" aria-hidden="true"><div class="mock-card mc-a">MON <span>數學</span></div><div class="mock-card mc-b">TUE <span>物理</span></div><div class="mock-card mc-c">WED <span>英文</span></div><div class="art-spark">✳</div></div>
+    </div>
+    <div class="workspace">
+      <aside class="panel settings">
+        <div class="section-title"><span class="section-number">01</span><div><h2>課表設定</h2><p>調整你的每週安排</p></div></div>
+        <label class="field">課表名稱<input id="scheduleTitle" maxlength="45" value="我的每週課表" autocomplete="off"></label>
+        <label class="field">副標題<input id="scheduleNote" maxlength="75" value="2026 學年度 · 第一學期" autocomplete="off"></label>
+        <div class="form-row"><label class="field">一週天數<select id="dayCount"><option value="5">週一至週五</option><option value="6">週一至週六</option><option value="7">週一至週日</option></select></label><label class="field">每日節數<input id="periodCount" type="number" min="4" max="12" value="8"></label></div>
+        <div class="form-row"><label class="field">第一節開始<input id="startTime" type="time" value="08:10"></label><label class="field">每節分鐘<input id="duration" type="number" min="20" max="120" value="50"></label></div>
+        <div class="form-row"><label class="field">下課分鐘<input id="breakMinutes" type="number" min="0" max="60" value="10"></label><label class="field">配色風格<select id="theme"><option value="sage">薄荷森林</option><option value="rose">柔粉奶茶</option><option value="blue">晴空藍調</option></select></label></div>
+        <div class="callout"><span>✦</span><div><strong>直接點擊右側課表</strong><p>選取空格新增課程，再次點擊即可修改。</p></div></div>
+        <div class="divider"></div>
+        <div class="section-title mini"><span class="section-number">02</span><div><h2>匯出與備份</h2><p>把成品帶走</p></div></div>
+        <button class="primary-button" id="exportPng">↓ 下載課表 PNG</button>
+        <div class="button-pair"><button class="ghost-button" id="exportJson">匯出 JSON</button><button class="ghost-button" id="importButton">匯入 JSON</button></div>
+        <input type="file" id="importFile" accept=".json,application/json" hidden>
+        <button class="text-button" id="resetButton">還原範例課表</button>
+      </aside>
+      <section class="preview-section" aria-label="可編輯課表">
+        <div class="preview-top"><div><span class="tiny-dot"></span> LIVE PREVIEW <span class="preview-sep">/</span> 點選任一格即可編輯</div><div class="legend"><span><i class="legend-dot l-mint"></i>課程</span><span><i class="legend-dot l-peach"></i>活動</span><span><i class="legend-dot l-lavender"></i>自習</span></div></div>
+        <div class="paper theme-sage" id="paper"><div class="paper-head"><div class="paper-kicker">WEEKLY PLANNER <span>✳</span></div><h2 id="paperTitle">我的每週課表</h2><p id="paperNote">2026 學年度 · 第一學期</p></div><div class="grid-scroller"><table id="scheduleGrid" aria-label="可編輯課表"><thead></thead><tbody></tbody></table></div><div class="paper-footer"><span>MAKE ROOM FOR EVERY LITTLE THING.</span><span>Schedule Studio ©</span></div></div>
+        <p class="help-line">提示：編輯內容會自動儲存在目前瀏覽器。匯出 JSON 可以備份或搬到其他裝置。</p>
+      </section>
+    </div>
+  </main>
+  <dialog id="courseDialog" class="course-dialog" aria-labelledby="dialogTitle"><form id="courseForm" method="dialog"><div class="dialog-top"><div><p class="eyebrow">EDIT SESSION</p><h2 id="dialogTitle">編輯課程</h2><p id="slotLabel"></p></div><button type="button" class="icon-close" id="closeDialog" aria-label="關閉">×</button></div><label class="field">課程名稱<input id="courseName" maxlength="28" placeholder="例如：數學、社團活動" required autocomplete="off"></label><div class="form-row"><label class="field">教室<input id="courseRoom" maxlength="24" placeholder="例如：302"></label><label class="field">教師 / 備註<input id="courseTeacher" maxlength="24" placeholder="可留空"></label></div><label class="field">課程分類<select id="courseCategory"><option value="course">一般課程 · 薄荷</option><option value="activity">活動課程 · 杏桃</option><option value="self">自主學習 · 薰衣草</option><option value="highlight">重點課程 · 黃金</option></select></label><div class="dialog-actions"><button type="button" class="danger-button" id="deleteCourse">清除此格</button><div class="dialog-right"><button type="button" class="ghost-button" id="cancelDialog">取消</button><button type="submit" class="primary-button">儲存課程</button></div></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb"><meta name="description" content="Table Studio：編輯漂亮的表格，匯入 CSV，匯出圖片、CSV、Markdown，無須後端。">
+  <title>Table Studio｜資料表格產生器</title>
+  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">▦</span><span>Table Studio<small>YOUR DATA, BEAUTIFULLY.</small></span></div>
+      <div class="side-section"><div class="side-label">WORKSPACE</div><div class="nav-current">▤ <span>表格編輯器</span><span class="tag">BETA</span></div><p class="sidebar-guide">輕鬆整理資料，把普通表格變成值得分享的作品。</p></div>
+      <div class="side-section"><div class="side-label">01 · 文件資訊</div><label class="field">表格標題<input id="tableTitle" maxlength="60" value="學期成績紀錄"></label><label class="field">補充說明<input id="tableSubtitle" maxlength="100" value="2026 年度 · 資料總覽"></label></div>
+      <div class="side-section"><div class="side-label">02 · 外觀</div><label class="field">配色<select id="tableTheme"><option value="indigo">靛藍經典</option><option value="mint">薄荷綠</option><option value="peach">蜜桃奶茶</option><option value="mono">極簡黑白</option></select></label><label class="field">儲存格對齊<select id="tableAlign"><option value="left">靠左</option><option value="center">置中</option><option value="right">靠右</option></select></label><label class="toggle"><input type="checkbox" id="zebra" checked><span>交錯列底色</span></label></div>
+      <div class="side-section"><div class="side-label">03 · 資料管理</div><button class="side-button" id="importCsv">↑ 匯入 CSV 檔案</button><button class="side-button" id="importJson">↑ 匯入專案 JSON</button><input id="csvFile" type="file" accept=".csv,text/csv,text/plain" hidden><input id="jsonFile" type="file" accept=".json,application/json" hidden><button class="side-button" id="resetTable">↺ 還原範例表格</button></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> 本機自動儲存<br><small>資料不會上傳到任何伺服器</small></div>
+    </aside>
+    <main class="main-content">
+      <header class="app-top"><div class="breadcrumbs">你的工作區 <span>/</span> 表格編輯器</div><span class="status-pill">● 所有變更已儲存在此瀏覽器</span></header>
+      <div class="main-inner"><div class="heading-row"><div><p class="eyebrow">CREATE / CUSTOMIZE / EXPORT</p><h1>讓資料，<em>更好看。</em></h1><p class="lead">直接點擊儲存格編輯，也可以從 Excel 複製一整塊資料貼進來。</p></div><div class="heading-badge"><span>✦</span> EDITION 001</div></div>
+      <div class="toolbar" role="toolbar" aria-label="表格操作"><div class="toolbar-group"><button id="addRow">＋ 新增列</button><button id="addColumn">＋ 新增欄</button><button id="removeRow">－ 刪除末列</button><button id="removeColumn">－ 刪除末欄</button></div><div class="toolbar-meta"><span id="rowCount">5 列</span><span id="colCount">4 欄</span></div></div>
+      <section class="preview"><div class="preview-header"><div class="mini-label"><span class="live"></span> DOCUMENT PREVIEW</div><span>點擊欄位即可編輯</span></div><div class="page" id="tablePage"><div class="document-top"><span>DATA SHEET <b>／ 001</b></span><span class="corner-star">✳</span></div><div class="document-title" id="previewTitle">學期成績紀錄</div><p class="document-subtitle" id="previewSubtitle">2026 年度 · 資料總覽</p><div class="table-scroll"><table id="dataGrid" aria-label="可編輯資料表格"><thead></thead><tbody></tbody></table></div><div class="document-bottom"><span>TABLE STUDIO · CRAFTED WITH CARE</span><span id="documentStamp"></span></div></div></section>
+      <div class="export-section"><div><p class="eyebrow">FINISH & SHARE</p><h2>完成了嗎？<span>帶走你的作品。</span></h2><p>不必註冊，不必上傳，檔案就在你手中。</p></div><div class="export-buttons"><button class="export-primary" id="exportPng">↓ 匯出 PNG</button><button class="export-secondary" id="exportCsv">CSV</button><button class="export-secondary" id="exportMd">Markdown</button><button class="export-secondary" id="exportJson">JSON</button></div></div>
+      <footer>Table Studio / v0.1.0 <span>純前端 · GitHub Pages Ready</span></footer></div>
+    </main>
+  </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

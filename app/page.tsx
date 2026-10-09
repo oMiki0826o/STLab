@@ -1,0 +1,4 @@
+import Link from "next/link";
+
+const tools = [{ href: "/schedule", icon: "▦", title: "Schedule Studio", text: "快速安排每週課程、研究與生活節奏。" }, { href: "/table", icon: "▤", title: "Table Studio", text: "整理資料、匯入匯出，做出乾淨表格。" }, { href: "/astro", icon: "✦", title: "Astro Catalog", text: "探索天體資料，搜尋並保存感興趣的項目。" }];
+export default function Home() { return <main className="shell"><header className="hero"><p className="eyebrow">SMALL THINGS LAB · STLAB</p><h1>把小工具，做成<br /><em>可以真的使用的實驗。</em></h1><p className="lede">三個離線友善的瀏覽器工具。資料留在你的裝置，不需要登入，也不依賴後端。</p></header><section className="tool-grid">{tools.map((tool) => <Link className="tool-card" href={tool.href} key={tool.href}><span className="tool-icon">{tool.icon}</span><h2>{tool.title}</h2><p>{tool.text}</p><span className="arrow">開啟工具 →</span></Link>)}</section><footer>STLab v0.1 · Next.js Static Export · Offline-first</footer></main>; }

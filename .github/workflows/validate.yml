@@ -1,0 +1,17 @@
+name: Validate static websites
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify JavaScript syntax
+        run: |
+          for file in schedule-studio/*.js table-studio/*.js astro-catalog/*.js; do node --check "$file"; done
+      - name: Validate HTML references
+        run: python3 tools/check_static.py
