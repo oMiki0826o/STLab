@@ -71,6 +71,10 @@ python3 tools/check_static.py
 
 Static Export 產物會寫入 `out/`.
 
+Pushes to `main` run the validation workflow and deploy the exported site to GitHub Pages. The repository Pages source must be set to `GitHub Actions`.
+
+推送到 `main` 會執行驗證並將靜態產物部署到 GitHub Pages. Repository 的 Pages source 必須設定為 `GitHub Actions`.
+
 若部署在 GitHub repository 子路徑, 可以設定 base path:
 
 ```bash
@@ -147,6 +151,10 @@ python3 tools/check_static.py
 ```
 
 The Static Export output is written to `out/`.
+
+Pushes to `main` run validation and deploy the exported site to GitHub Pages. Set the repository Pages source to `GitHub Actions`.
+
+The expected project URL is `https://omiki0826o.github.io/STLab/`.
 
 When deploying under a GitHub repository path, set the base path during the build:
 
