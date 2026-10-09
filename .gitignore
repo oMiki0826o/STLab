@@ -3,3 +3,6 @@ node_modules/
 out/
 *.tsbuildinfo
 .DS_Store
+
+# Local development data and AI workflow records; keep the entire directory out of Git.
+data/
