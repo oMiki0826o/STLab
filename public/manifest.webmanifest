@@ -1,0 +1,10 @@
+{
+  "name": "Small Things Lab",
+  "short_name": "STLab",
+  "description": "Offline-friendly small web tools.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#17212b",
+  "icons": []
+}

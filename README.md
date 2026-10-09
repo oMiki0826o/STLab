@@ -67,7 +67,7 @@ The generated `out/` directory is the deployment artifact. / 產生的 `out/` �
 - Schedule, chart settings, and Astro favorites use browser `localStorage`. / 課表、圖表設定與天體收藏使用瀏覽器 `localStorage`。
 - Exported files are generated in the browser. / 匯出檔案在瀏覽器本機產生。
 - Clearing browser site data can remove local projects. Export JSON backups when needed. / 清除網站資料可能會刪除本機專案，請視需要匯出 JSON 備份。
-- Full PWA caching and install prompts are planned, but are not claimed as complete in `v0.1.0`. / 完整 PWA 快取與安裝提示列入後續規劃，`v0.1.0` 尚不宣稱已完成。
+- A basic manifest and service-worker app-shell cache are included. Install prompts, update UX, icons, and broad browser verification remain future work. / 目前已加入基礎 manifest 與 Service Worker app-shell 快取；安裝提示、更新體驗、圖示與完整瀏覽器驗證仍列入後續工作。
 
 ## Roadmap / 後續規劃
 
@@ -87,6 +87,17 @@ Changes follow the repository's AI Development Governance principles: understand
 Local workflow records are stored under `data/`, which is intentionally ignored by Git.
 
 本機工作流程紀錄放在 `data/`，該目錄已刻意加入 `.gitignore`，不會提交到 Git。
+
+### Governance evidence / 治理證據對照
+
+| Principle / 原則 | Repository evidence / 專案證據 |
+| --- | --- |
+| Understand before modify / 修改前理解 | The original static prototype remains in its own directories and is covered by `tools/check_static.py`. / 原生靜態原型保留在原目錄，並由 `tools/check_static.py` 檢查。 |
+| Control scope / 控制範圍 | The current release is limited to three client-side tools and static export; backend sync and accounts are not included. / 本版本限定三個前端工具與靜態輸出，不包含後端同步與帳號。 |
+| Verify after changes / 修改後驗證 | `npm test`, `npm run typecheck`, `npm run build`, and `python3 tools/check_static.py` are run locally and in GitHub Actions. / 本機與 GitHub Actions 都執行測試、型別檢查、建置與靜態檢查。 |
+| Evidence before claims / 先證據後宣稱 | The Current status and Roadmap sections separate implemented behavior from proposals. / Current status 與 Roadmap 明確區分已實作與規劃。 |
+| Protect user data / 保護使用者資料 | Browser storage and export behavior are documented; no server upload is implemented. / 已說明瀏覽器儲存與匯出行為，未實作伺服器上傳。 |
+| Reversible workflow records / 可保留的工作紀錄 | Local workflow records remain under ignored `data/`; source changes remain reviewable through Git history. / 本機工作紀錄保留在被忽略的 `data/`，程式變更透過 Git 歷史追蹤。 |
 
 ## License / 授權
 
