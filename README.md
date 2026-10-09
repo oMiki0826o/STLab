@@ -30,7 +30,7 @@ Small Things Lab 是一系列漂亮, 實用且離線友善的單一用途 Web Ap
 
 ### 功能
 
-- Schedule Studio: 編輯每週課表, 並將資料保存在瀏覽器本機.
+- Schedule Studio: 編輯每週課表, 匯入或匯出 JSON 專案, 並將資料保存在瀏覽器本機.
 - Table Studio: 輸入 X/Y 座標, 設定軸名稱, 單位, 最大值與刻度間距, 即時產生 SVG 折線圖.
 - AstroCatalog: 搜尋精選天體資料, 依類型篩選並保存收藏.
 - Local storage: 不需帳號即可保存課表, 圖表設定與收藏.
@@ -107,7 +107,7 @@ The project follows AI Development Governance: understand existing behavior befo
 
 ### Features
 
-- Schedule Studio: edit a weekly schedule and keep it in browser storage.
+- Schedule Studio: edit a weekly schedule, import or export a JSON project, and keep it in browser storage.
 - Table Studio: enter X/Y coordinates, configure labels, units, limits, and tick spacing, and generate a live SVG line chart.
 - AstroCatalog: search a curated astronomy catalog, filter by type, and save favorites.
 - Local storage: save schedules, chart settings, and favorites without an account.
