@@ -281,3 +281,115 @@ magnitude: 7.0
 note: 面紗星雲西側細長結構，會穿過一顆前景恆星附近。
 nearbyStars: NGC 6992, 52 Cygni, Deneb
 searchGuide: 先找天鵝座，再用東西面紗的相對位置與星圖核對。
+
+## NGC 869｜英仙座 h 星團
+id: ngc869-markdown
+aliases: Double Cluster h, Caldwell 14
+type: 疏散星團
+constellation: 英仙座
+ra: 02h 19m 00s
+dec: +57° 08′
+angularSize: 30′
+distance: 7,600 光年
+magnitude: 5.3
+note: 英仙座雙星團的東側成員，與 NGC 884 同時出現在低倍視野中。
+nearbyStars: NGC 884, Mirfak, Algol
+searchGuide: 從仙后座沿銀河帶向英仙座移動，雙星團會呈現兩團緊鄰的星點。
+
+## NGC 884｜英仙座 χ 星團
+id: ngc884-markdown
+aliases: Double Cluster χ, Caldwell 23
+type: 疏散星團
+constellation: 英仙座
+ra: 02h 22m 00s
+dec: +57° 07′
+angularSize: 30′
+distance: 7,500 光年
+magnitude: 6.1
+note: 英仙座雙星團的西側成員，適合用雙筒望遠鏡觀賞。
+nearbyStars: NGC 869, Mirfak, Schedar
+searchGuide: 找到 NGC 869 後，向西側尋找另一團密集星群即可。
+
+## NGC 2392｜愛斯基摩星雲
+id: ngc2392-markdown
+aliases: Eskimo Nebula, Clown Nebula
+type: 行星狀星雲
+constellation: 雙子座
+ra: 07h 29m 11s
+dec: +20° 55′
+angularSize: 48″
+distance: 6,500 光年
+magnitude: 9.2
+note: 小而明亮的行星狀星雲，高倍率下可見近似雙層結構。
+nearbyStars: Pollux, Castor, Procyon
+searchGuide: 先找到雙子座的 Castor 與 Pollux，再以星圖搜尋雙子座北側的 NGC 2392。
+
+## NGC 4565｜針狀星系
+id: ngc4565-markdown
+aliases: Needle Galaxy, Caldwell 38
+type: 星系
+constellation: 后髮座
+ra: 12h 36m 21s
+dec: +25° 59′
+angularSize: 16′ × 2′
+distance: 4,200 萬光年
+magnitude: 9.6
+note: 從側面看呈細長亮帶，是春季星系攝影常見目標。
+nearbyStars: Coma Berenices, Arcturus, M53
+searchGuide: 從北斗七星斗柄往南找牧夫座大角星，再向后髮座方向移動。
+
+## NGC 7000｜北美星雲
+id: ngc7000-markdown
+aliases: North America Nebula, Caldwell 20
+type: 發射星雲
+constellation: 天鵝座
+ra: 20h 59m 17s
+dec: +44° 31′
+angularSize: 120′ × 100′
+distance: 2,590 光年
+magnitude: 4.0
+note: 大型低表面亮度星雲，適合廣角與雙窄頻濾鏡拍攝。
+nearbyStars: Deneb, Pelican Nebula, Gamma Cygni
+searchGuide: 以天津四 Deneb 為中心向東側搜尋，星雲的形狀在窄頻影像中最容易辨認。
+
+## Sirius｜天狼星
+id: sirius-markdown
+aliases: Alpha Canis Majoris, 大犬座α
+type: 亮星
+constellation: 大犬座
+ra: 06h 45m 09s
+dec: −16° 43′
+angularSize: —
+distance: 8.6 光年
+magnitude: -1.46
+note: 夜空中最亮的恆星，是冬季辨認大犬座與獵戶座方向的好起點。
+nearbyStars: Betelgeuse, Procyon, Rigel
+searchGuide: 沿獵戶座腰帶向東南延伸，第一顆醒目的白色亮星就是天狼星。
+
+## Arcturus｜大角星
+id: arcturus-markdown
+aliases: Alpha Boötis, 牧夫座α
+type: 亮星
+constellation: 牧夫座
+ra: 14h 15m 40s
+dec: +19° 11′
+angularSize: —
+distance: 36.7 光年
+magnitude: -0.05
+note: 北天非常醒目的橘色亮星，春季可用來延伸尋找牧夫座。
+nearbyStars: Spica, M3, Cor Caroli
+searchGuide: 沿北斗七星斗柄弧線向南延伸，第一顆亮星就是大角星。
+
+## Spica｜角宿一
+id: spica-markdown
+aliases: Alpha Virginis, 室女座α
+type: 亮星
+constellation: 室女座
+ra: 13h 25m 12s
+dec: −11° 09′
+angularSize: —
+distance: 約 250 光年
+magnitude: 0.98
+note: 春季大三角的一角，位於黃道附近的藍白色聯星系統。
+nearbyStars: Arcturus, Denebola, M104
+searchGuide: 找到大角星後向南延伸，靠近黃道的一顆亮星就是角宿一。
