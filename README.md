@@ -22,6 +22,8 @@
 
 Small Things Lab 是一組放在瀏覽器裡就能用的小工具。每個工具只處理一件事，資料也留在自己的裝置上。
 
+天文工具已獨立至 [AstroLab](https://github.com/oMiki0826o/AstroLab)，不再和本倉庫的學校與資料工具混在一起。
+
 本專案使用 Next.js、React 與 TypeScript，部署在 GitHub Pages。沒有登入、後端或資料庫；課表、圖表設定與考試資料都保存在瀏覽器本機。天文工具已拆分至獨立的 AstroLab 倉庫。
 
 目前版本為 `v0.1.0`, 包含三個工具與基礎離線 App Shell. 原始 HTML prototype 仍保留在專案中, 用於比較與回歸檢查.
@@ -101,6 +103,8 @@ NEXT_PUBLIC_BASE_PATH=/STLab npm run build
 ### About
 
 Small Things Lab is a collection of beautiful, practical, and offline-friendly single-purpose web apps.
+
+The astronomy tools now live in the independent [AstroLab](https://github.com/oMiki0826o/AstroLab) repository, keeping this project focused on school and data utilities.
 
 The project is built with Next.js, React, and TypeScript, and is deployed to GitHub Pages through Static Export. It requires no account, backend, database, or API key. Schedules, chart settings, and exam plans remain in the browser. Astronomy tools now live in the independent AstroLab repository.
 
