@@ -1,2 +1,2 @@
 import { describe, expect, it } from "vitest"; import { visibleCatalog } from "./astro";
-describe("astro catalog",()=>{it("filters by type and query",()=>expect(visibleCatalog("木星","行星").map(x=>x.id)).toEqual(["jupiter"]));});
+describe("astro catalog",()=>{it("filters by type and query",()=>expect(visibleCatalog("木星","行星").map(x=>x.id)).toEqual(["jupiter"]));it("includes common deep-sky aliases",()=>{expect(visibleCatalog("NGC 7000","").map(x=>x.id)).toContain("ngc7000");expect(visibleCatalog("M13","").map(x=>x.id)).toContain("m13");});});
