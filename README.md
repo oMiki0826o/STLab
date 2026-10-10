@@ -181,3 +181,8 @@ User data remains in the browser. Clearing site data may remove local content, s
 ### License
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE).
+
+
+## v0.2.0 修正
+
+請參閱 [CHANGELOG.md](CHANGELOG.md)。部署前執行 `npm ci` 與 `npm run check`；課表、資料表及考試清單匯入建議先匯出備份。

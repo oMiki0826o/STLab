@@ -1,6 +1,6 @@
 {
   "name": "stlab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {"dev":"next dev","build":"next build","start":"next start","test":"vitest run","typecheck":"tsc --noEmit","check":"npm test && npm run typecheck && npm run build && python3 tools/check_static.py"},

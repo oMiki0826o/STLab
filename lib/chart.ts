@@ -7,7 +7,7 @@ export function pointsText(points: ChartPoint[]): string { return points.map(({x
 /** Keep axis controls usable even when an imported project contains an extreme step. */
 export function axisTicks(max: number, step: number, limit = 21): number[] {
   const safeMax = Math.max(1, Number.isFinite(max) ? max : 1);
-  const safeStep = Math.max(safeMax / (limit - 1), Number.isFinite(step) ? step : safeMax);
+  const safeStep = Math.max(safeMax / (limit - 1), Number.isFinite(step) && step > 0 ? step : safeMax);
   const count = Math.min(limit, Math.floor(safeMax / safeStep) + 1);
   return Array.from({ length: count }, (_, index) => Math.min(safeMax, index * safeStep));
 }
