@@ -18,6 +18,13 @@ PAGES = [
     ROOT / 'table-studio' / 'index.html',
 ]
 EXPORTED_ROUTES = []
+NEXT_ROUTES = [
+    "index.html",
+    "schedule/index.html",
+    "table/index.html",
+    "exam/index.html",
+    "404.html",
+]
 
 
 # ── HTML 結構檢查 ──
@@ -70,7 +77,10 @@ def main():
     missing = [route for route in EXPORTED_ROUTES if not (exported_root / route).exists()]
     if missing:
         raise SystemExit('ERROR missing exported routes: ' + ', '.join(missing))
-    print(f'CHECK out/: {len(EXPORTED_ROUTES)} Next.js routes present')
+    missing_next = [route for route in NEXT_ROUTES if not (exported_root / route).exists()]
+    if missing_next:
+        raise SystemExit('ERROR missing Next.js routes: ' + ', '.join(missing_next))
+    print(f'CHECK out/: {len(NEXT_ROUTES)} Next.js routes present')
     print(f'OK: {len(PAGES)} static HTML pages validated')
 
 
