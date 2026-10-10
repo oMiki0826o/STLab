@@ -1,4 +1,5 @@
-export type AstroObject = { id: string; name: string; aliases: string[]; type: string; constellation: string; ra: string; dec: string; angularSize: string; distance: string; magnitude: number; note: string; nearbyStars?: string[]; searchGuide?: string; source?: string; indexOnly?: boolean };
+import { markdownCatalog } from "./astro-markdown.generated";
+export type AstroObject = { id: string; name: string; aliases: readonly string[]; type: string; constellation: string; ra: string; dec: string; angularSize: string; distance: string; magnitude: number; note: string; nearbyStars?: readonly string[]; searchGuide?: string; source?: string; indexOnly?: boolean };
 export const catalog: AstroObject[] = [
   {id:"m31",name:"仙女座星系 M31",aliases:["NGC 224","Andromeda Galaxy"],type:"星系",constellation:"仙女座",ra:"00h 42m 44s",dec:"+41° 16′",angularSize:"3.2° × 1.0°",distance:"254 萬光年",magnitude:3.44,note:"肉眼可見的鄰近大型星系。"},
   {id:"m42",name:"獵戶座大星雲 M42",aliases:["NGC 1976","Orion Nebula"],type:"星雲",constellation:"獵戶座",ra:"05h 35m 17s",dec:"−05° 23′",angularSize:"1.1°",distance:"1,340 光年",magnitude:4.0,note:"活躍的恆星形成區。"},
@@ -24,6 +25,7 @@ catalog.push(
   {id:"m81",name:"波德星系 M81",aliases:["NGC 3031","Bode's Galaxy"],type:"星系",constellation:"大熊座",ra:"09h 55m 33s",dec:"+69° 04′",angularSize:"27′ × 14′",distance:"1,170 萬光年",magnitude:6.9,note:"與 M82 同場的北天星系，適合春季觀測。",nearbyStars:["M82 雪茄星系","北斗七星"],searchGuide:"沿北斗七星斗柄外側尋找 M81/M82 雙星系位置。"},
   {id:"m82",name:"雪茄星系 M82",aliases:["NGC 3034","Cigar Galaxy"],type:"星系",constellation:"大熊座",ra:"09h 55m 52s",dec:"+69° 40′",angularSize:"11′ × 5′",distance:"1,150 萬光年",magnitude:8.4,note:"具有強烈恆星形成活動的星暴星系。",nearbyStars:["M81 波德星系","北斗七星"],searchGuide:"與 M81 相距約半度，同一低倍視野可嘗試尋找。"},
 );
+for (const item of markdownCatalog) if (!catalog.some(existing => existing.id === item.id)) catalog.push(item);
 const messierNames: Record<number,string> = {1:"蟹狀星雲",2:"球狀星團",3:"球狀星團",4:"球狀星團",5:"球狀星團",6:"蝴蝶星團",7:"托勒密星團",8:"礁湖星雲",9:"球狀星團",10:"球狀星團",11:"野鴨星團",12:"球狀星團",13:"武仙座大球狀星團",14:"球狀星團",15:"球狀星團",16:"鷹星雲",17:"奧米加星雲",18:"星團",19:"球狀星團",20:"三裂星雲",21:"疏散星團",22:"球狀星團",23:"疏散星團",24:"人馬座恆星雲",25:"疏散星團",26:"疏散星團",27:"啞鈴星雲",28:"球狀星團",29:"疏散星團",30:"球狀星團",31:"仙女座星系",32:"橢圓星系",33:"三角座星系",34:"英仙座雙星團",35:"疏散星團",36:"疏散星團",37:"疏散星團",38:"疏散星團",39:"疏散星團",40:"雙星"};
 for (let i = 1; i <= 110; i += 1) { if (!catalog.some(item => item.id === `m${i}`)) catalog.push({id:`m${i}`,name:`${messierNames[i] ?? "梅西耶天體"} M${i}`,aliases:[`Messier ${i}`],type:"梅西耶索引",constellation:"請開啟詳細資料查閱",ra:"—",dec:"—",angularSize:"—",distance:"—",magnitude:0,note:"這是梅西耶目錄索引；精確座標與視星等應搭配專業星圖或資料庫確認。",searchGuide:`可用 M${i} 或 Messier ${i} 搜尋。`,indexOnly:true}); }
 export function visibleCatalog(query: string, type: string) { const q = query.trim().toLowerCase(); return catalog.filter(item => (!item.indexOnly || !!q) && (!type || item.type === type) && (!q || `${item.name} ${item.aliases.join(" ")} ${item.constellation} ${item.note}`.toLowerCase().includes(q))); }
