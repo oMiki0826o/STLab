@@ -36,6 +36,7 @@
 - [x] Astro Catalog：名稱／別名／星座搜尋、類型篩選、收藏與天體基本資料。
 - [x] 共用視覺：深淺主題、手機響應式、焦點狀態、離線 Service Worker 快取版本。
 - [x] 驗證流程：Vitest、TypeScript、Static Export、靜態 HTML 檢查。
+- [x] 輸入驗證：表格欄位與圖表設定有共用的純函式驗證規則與測試。
 
 ## 下一階段候選項目
 
