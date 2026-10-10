@@ -25,6 +25,11 @@ NEXT_ROUTES = [
     "exam/index.html",
     "404.html",
 ]
+ROUTE_CONTENT = {
+    "schedule/index.html": ("Schedule Studio", "匯出 JSON", "下載 PNG"),
+    "table/index.html": ("Table Studio", "匯出 CSV", "實驗圖表"),
+    "exam/index.html": ("Exam Planner", "匯出 JSON", "準備度"),
+}
 
 
 # ── HTML 結構檢查 ──
@@ -80,6 +85,12 @@ def main():
     missing_next = [route for route in NEXT_ROUTES if not (exported_root / route).exists()]
     if missing_next:
         raise SystemExit('ERROR missing Next.js routes: ' + ', '.join(missing_next))
+    for route, phrases in ROUTE_CONTENT.items():
+        content = (exported_root / route).read_text(encoding="utf-8")
+        missing_phrases = [phrase for phrase in phrases if phrase not in content]
+        if missing_phrases:
+            raise SystemExit(f'ERROR {route} missing content: ' + ', '.join(missing_phrases))
+    print(f'CHECK route content: {len(ROUTE_CONTENT)} app pages')
     print(f'CHECK out/: {len(NEXT_ROUTES)} Next.js routes present')
     print(f'OK: {len(PAGES)} static HTML pages validated')
 
