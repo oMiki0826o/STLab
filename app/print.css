@@ -1,0 +1,10 @@
+@media print {
+  body { background: #fff; color: #000; }
+  .app { max-width: none; padding: 0; }
+  .app-header .theme-toggle, .back, .actions, .exam-form,
+  .exam-summary button, .exam-summary label { display: none !important; }
+  .panel, .exam-card { border: 0; box-shadow: none; border-radius: 0; break-inside: avoid; }
+  .exam-list { display: block; }
+  .exam-card { border-top: 1px solid #bbb; padding: 16px 0; }
+  .muted { color: #333; }
+}
