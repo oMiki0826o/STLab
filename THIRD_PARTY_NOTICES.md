@@ -1,5 +1,5 @@
 # 第三方資料與授權
 
-本專案本身採用 MIT License，完整條款請見根目錄的 `LICENSE`。
+本專案目前的 Next.js 工具未直接打包第三方資料集；程式碼採用 MIT License，完整條款請見根目錄的 `LICENSE`。
 
-AstroCatalog 的部分天體資料整理自 [YaleBrightStarCatalog](https://github.com/brettonw/YaleBrightStarCatalog)，原專案採 MIT License。這些資料僅作為 AstroCatalog 的靜態目錄來源，中文名稱、觀測提示與介面由 Small Things Lab 另行整理。
+原本的 AstroCatalog 已拆分至獨立的 [AstroLab](https://github.com/oMiki0826o/AstroLab) 儲存庫。Yale Bright Star Catalog 的資料授權與來源聲明請以 AstroLab 的 `THIRD_PARTY_NOTICES.md` 為準，不屬於本倉庫目前的發布內容。

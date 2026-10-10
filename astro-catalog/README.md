@@ -1,4 +1,6 @@
-# AstroCatalog
+# AstroCatalog（歷史原型）
+
+> 本資料夾是拆分前的靜態原型，已不再是 Small Things Lab 的現行功能。現行版本請前往 [AstroLab](https://github.com/oMiki0826o/AstroLab)。
 
 純前端梅西爾天體查詢工具。所有天體資料隨網站靜態發布，不需要 API 金鑰。
 
