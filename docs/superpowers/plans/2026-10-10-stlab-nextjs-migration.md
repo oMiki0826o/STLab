@@ -28,3 +28,18 @@
 ## 發布
 
 完成上述驗證後，在此目錄初始化 Git，建立 `main` 初始 commit，設定 `https://github.com/oMiki0826o/STLab.git`，再推送。
+
+## 基礎版本完成狀態
+
+- [x] Schedule Studio：週一至週五、上午四節／午休／下午四節、JSON 匯入匯出、PNG 匯出、本機保存。
+- [x] Table Studio：資料列與欄位編輯、CSV／JSON 匯入匯出、座標點編輯、X／Y 軸獨立設定、SVG／PNG 圖表。
+- [x] Astro Catalog：名稱／別名／星座搜尋、類型篩選、收藏與天體基本資料。
+- [x] 共用視覺：深淺主題、手機響應式、焦點狀態、離線 Service Worker 快取版本。
+- [x] 驗證流程：Vitest、TypeScript、Static Export、靜態 HTML 檢查。
+
+## 下一階段候選項目
+
+- [ ] Schedule Studio：自訂節次、課程顏色與 A／B 週。
+- [ ] Table Studio：欄位排序、篩選、刪除欄位與樣式模板。
+- [ ] Astro Catalog：觀測清單匯出與望遠鏡視野計算。
+- [ ] 新增獨立工具前，先確認工具具備輸入、即時預覽與可下載成果三個條件。
