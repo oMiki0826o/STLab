@@ -115,5 +115,165 @@ export const markdownCatalog = [
     ],
     "searchGuide": "從 M8 向北尋找，低倍望遠鏡與相機都容易捕捉。",
     "source": "content/astro/common.md"
+  },
+  {
+    "id": "m33-markdown",
+    "name": "M33｜三角座星系",
+    "aliases": [
+      "NGC 598",
+      "Triangulum Galaxy"
+    ],
+    "type": "星系",
+    "constellation": "三角座",
+    "ra": "01h 33m 50s",
+    "dec": "+30° 39′",
+    "angularSize": "73′ × 45′",
+    "distance": "273 萬光年",
+    "magnitude": 5.72,
+    "note": "表面亮度偏低，暗空與雙筒望遠鏡通常比城市觀測更合適。",
+    "nearbyStars": [
+      "M31 仙女座星系",
+      "Mirach",
+      "Algol"
+    ],
+    "searchGuide": "從仙女座大星系往南找三角座，使用低倍率與較大視野搜尋淡淡的橢圓光斑。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "m42-markdown",
+    "name": "M42｜獵戶座大星雲",
+    "aliases": [
+      "NGC 1976",
+      "Orion Nebula"
+    ],
+    "type": "星雲",
+    "constellation": "獵戶座",
+    "ra": "05h 35m 17s",
+    "dec": "−05° 23′",
+    "angularSize": "65′ × 60′",
+    "distance": "1,340 光年",
+    "magnitude": 4,
+    "note": "冬季最容易入門的深空目標之一，小型望遠鏡即可看到明亮核心。",
+    "nearbyStars": [
+      "Betelgeuse",
+      "Rigel",
+      "M43"
+    ],
+    "searchGuide": "尋找獵戶座腰帶下方的劍，劍中央那片朦朧光斑就是 M42。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "m45-markdown",
+    "name": "M45｜昴宿星團",
+    "aliases": [
+      "Pleiades",
+      "七姊妹星團"
+    ],
+    "type": "疏散星團",
+    "constellation": "金牛座",
+    "ra": "03h 47m 24s",
+    "dec": "+24° 07′",
+    "angularSize": "110′",
+    "distance": "444 光年",
+    "magnitude": 1.6,
+    "note": "適合肉眼、雙筒與短焦攝影；長焦容易塞不下完整星團。",
+    "nearbyStars": [
+      "Aldebaran",
+      "Hyades",
+      "M1"
+    ],
+    "searchGuide": "冬季尋找金牛座附近的小型星群，肉眼常能數到六至七顆亮星。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "m57-markdown",
+    "name": "M57｜環狀星雲",
+    "aliases": [
+      "NGC 6720",
+      "Ring Nebula"
+    ],
+    "type": "行星狀星雲",
+    "constellation": "天琴座",
+    "ra": "18h 53m 35s",
+    "dec": "+33° 02′",
+    "angularSize": "1.4′",
+    "distance": "2,300 光年",
+    "magnitude": 8.8,
+    "note": "角直徑小但表面亮度高，中倍率望遠鏡較容易確認環狀輪廓。",
+    "nearbyStars": [
+      "Vega",
+      "Sheliak",
+      "Sulafat"
+    ],
+    "searchGuide": "找到織女星後，在天琴座平行四邊形的兩顆下側亮星之間搜尋。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "m101-markdown",
+    "name": "M101｜風車星系",
+    "aliases": [
+      "NGC 5457",
+      "Pinwheel Galaxy"
+    ],
+    "type": "星系",
+    "constellation": "大熊座",
+    "ra": "14h 03m 13s",
+    "dec": "+54° 20′",
+    "angularSize": "29′ × 27′",
+    "distance": "2,100 萬光年",
+    "magnitude": 7.9,
+    "note": "面積大但表面亮度低，適合暗空與長時間攝影，不宜只看視星等。",
+    "nearbyStars": [
+      "Alkaid",
+      "Mizar",
+      "M51"
+    ],
+    "searchGuide": "從北斗斗柄末端向東北尋找，拍攝時使用較大的視野保留旋臂結構。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "ngc4565-markdown",
+    "name": "NGC 4565｜針狀星系",
+    "aliases": [
+      "Needle Galaxy"
+    ],
+    "type": "星系",
+    "constellation": "后髮座",
+    "ra": "12h 36m 21s",
+    "dec": "+25° 59′",
+    "angularSize": "16′ × 2′",
+    "distance": "4,000 萬光年",
+    "magnitude": 9.6,
+    "note": "側向螺旋星系，長而細的外觀是它最明顯的辨識特徵。",
+    "nearbyStars": [
+      "Cor Caroli",
+      "Coma Berenices Cluster",
+      "M64"
+    ],
+    "searchGuide": "春季由獵犬座與后髮座交界尋找，建議用中長焦與星圖核對。",
+    "source": "content/astro/common.md"
+  },
+  {
+    "id": "ic434-markdown",
+    "name": "IC 434｜馬頭星雲",
+    "aliases": [
+      "Horsehead Nebula",
+      "Barnard 33"
+    ],
+    "type": "暗星雲",
+    "constellation": "獵戶座",
+    "ra": "05h 41m 00s",
+    "dec": "−02° 27′",
+    "angularSize": "60′ × 10′",
+    "distance": "1,375 光年",
+    "magnitude": 6.8,
+    "note": "需要合適濾鏡、暗空與長時間曝光；肉眼與小型望遠鏡不容易直接看見馬頭輪廓。",
+    "nearbyStars": [
+      "Alnitak",
+      "M42",
+      "Flame Nebula"
+    ],
+    "searchGuide": "以獵戶座腰帶最東側的參宿一（Alnitak）為定位點，向南尋找發射星雲 IC 434。",
+    "source": "content/astro/common.md"
   }
 ] as const;
