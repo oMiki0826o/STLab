@@ -70,6 +70,12 @@ npm run build
 python3 tools/check_static.py
 ```
 
+也可以用單一指令執行完整檢查：
+
+```bash
+npm run check
+```
+
 Static Export 產物會寫入 `out/`.
 
 Pushes to `main` run the validation workflow and deploy the exported site to GitHub Pages. The repository Pages source must be set to `GitHub Actions`.
@@ -150,6 +156,12 @@ npm test
 npm run typecheck
 npm run build
 python3 tools/check_static.py
+```
+
+For the same complete local check in one command:
+
+```bash
+npm run check
 ```
 
 The Static Export output is written to `out/`.
