@@ -25,6 +25,7 @@ EXPORTED_ROUTES = [
     'astro/planner/index.html',
     'astro/compare/index.html',
     'astro/deep-sky/index.html',
+    'astro/constellations/index.html',
     'astro/object/m42/index.html',
 ]
 
