@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggle from "../../components/theme-toggle";
 import { download, load, save } from "../../lib/storage";
-import { ChartSettings, defaultChart } from "../../lib/chart";
+import { axisTicks, ChartSettings, defaultChart } from "../../lib/chart";
 import { normalizeTable, parseDelimited, removeLastColumn, removeLastRow, TableData, toCsv } from "../../lib/table";
 
 const initialTable: TableData = { title: "未命名資料表", headers: ["欄位 1", "欄位 2"], rows: [["", ""]] };
@@ -13,8 +13,8 @@ function Chart({ chart }: { chart: ChartSettings }) {
   const width = 760, height = 400, left = 68, right = 22, top = 30, bottom = 58;
   const x = (value: number) => left + (value / chart.xMax) * (width - left - right);
   const y = (value: number) => height - bottom - (value / chart.yMax) * (height - top - bottom);
-  const xTicks = Array.from({ length: Math.floor(chart.xMax / chart.xStep) + 1 }, (_, i) => i * chart.xStep);
-  const yTicks = Array.from({ length: Math.floor(chart.yMax / chart.yStep) + 1 }, (_, i) => i * chart.yStep);
+  const xTicks = axisTicks(chart.xMax, chart.xStep);
+  const yTicks = axisTicks(chart.yMax, chart.yStep);
   return <svg className="chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={chart.title}><rect width={width} height={height} fill="var(--card)" /><line x1={left} y1={top} x2={left} y2={height - bottom} stroke="var(--ink)" /><line x1={left} y1={height - bottom} x2={width - right} y2={height - bottom} stroke="var(--ink)" />{xTicks.map(t => <g key={`x-${t}`}><line x1={x(t)} y1={top} x2={x(t)} y2={height - bottom} stroke="var(--line)" /><text x={x(t)} y={height - bottom + 22} textAnchor="middle" fontSize="12">{t}</text></g>)}{yTicks.map(t => <g key={`y-${t}`}><line x1={left} y1={y(t)} x2={width - right} y2={y(t)} stroke="var(--line)" /><text x={left - 10} y={y(t) + 4} textAnchor="end" fontSize="12">{t}</text></g>)}<polyline points={chart.points.map(point => `${x(point.x)},${y(point.y)}`).join(" ")} fill="none" stroke="var(--accent)" strokeWidth="3" />{chart.points.map((point, index) => <circle key={index} cx={x(point.x)} cy={y(point.y)} r="5" fill="var(--accent)" />)}<text x={(left + width - right) / 2} y={height - 10} textAnchor="middle" fontSize="13">{chart.xLabel}（{chart.xUnit}）</text><text x="16" y={(top + height - bottom) / 2} textAnchor="middle" fontSize="13" transform={`rotate(-90 16 ${(top + height - bottom) / 2})`}>{chart.yLabel}（{chart.yUnit}）</text></svg>;
 }
 
