@@ -85,7 +85,7 @@ NEXT_PUBLIC_BASE_PATH=/STLab npm run build
 
 ### 授權
 
-本專案採用 MIT License, 詳見 [LICENSE](./LICENSE).
+本專案採用 MIT License，詳見 [LICENSE](./LICENSE)。第三方資料來源與個別 attribution 見 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
 ---
 
