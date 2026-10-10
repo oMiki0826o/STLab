@@ -28,6 +28,7 @@ EXPORTED_ROUTES = [
     'astro/constellations/index.html',
     'astro/moon/index.html',
     'astro/equipment/index.html',
+    'astro/exposure/index.html',
     'astro/object/m42/index.html',
 ]
 

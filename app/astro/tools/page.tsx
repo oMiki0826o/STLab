@@ -9,5 +9,6 @@ const tools=[
   ["Constellation Explorer","從星座出發，查看附近亮星與深空目標。","/astro/constellations/"],
   ["Moon Phase Explorer","查看月齡與照明比例，安排深空攝影時間。","/astro/moon/"],
   ["Equipment Planner","用焦段、相機與目標估算拍攝視野。","/astro/equipment/"],
+  ["Exposure Calculator","安排濾鏡、子曝光與總整合時間。","/astro/exposure/"],
 ];
 export default function AstroTools(){return <main className="app"><div className="app-header"><div><Link className="back" href="/">← STLab</Link><h1>Astro Tools</h1><p className="muted">先查目標，再決定今晚要看什麼、怎麼拍。</p></div><ThemeToggle/></div><section className="astro-tools-grid">{tools.map(([title,description,href],index)=><Link className="astro-tool-card" href={href} key={title}><span className="eyebrow">{String(index+1).padStart(2,"0")}</span><h2>{title}</h2><p>{description}</p><span className="arrow">開啟工具 →</span></Link>)}</section></main>}
