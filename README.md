@@ -33,7 +33,7 @@ Small Things Lab 是一組放在瀏覽器裡就能用的小工具。每個工具
 ### 功能
 
 - Schedule Studio: 編輯每週課表, 匯入或匯出 JSON 專案, 並將資料保存在瀏覽器本機.
-- Table Studio: 編輯資料表、CSV/JSON 匯入匯出；輸入 X/Y 座標, 設定軸名稱, 單位, 最大值與刻度間距, 即時產生 SVG 折線圖並可下載 PNG.
+- Table Studio: 編輯資料表、刪除列欄、CSV/JSON 匯入匯出；輸入 X/Y 座標, 設定軸名稱, 單位, 最大值與刻度間距, 即時產生 SVG 折線圖並可刪除資料點、下載 PNG.
 - Local storage: 不需帳號即可保存課表, 圖表設定與收藏.
 - Static export: 產生可部署到 GitHub Pages 的靜態網站.
 - Offline app shell: 使用 manifest 與 Service Worker 快取主要頁面.
@@ -121,7 +121,7 @@ The project follows AI Development Governance: understand existing behavior befo
 ### Features
 
 - Schedule Studio: edit a weekly schedule, import or export a JSON project, and keep it in browser storage.
-- Table Studio: edit tabular data with CSV/JSON import/export, enter X/Y coordinates, configure labels, units, limits, and tick spacing, and generate a live SVG line chart or PNG.
+- Table Studio: edit tabular data, remove rows or columns, import/export CSV or JSON, enter X/Y coordinates, configure labels, units, limits, and tick spacing, and generate a live SVG line chart or PNG.
 - Local storage: save schedules, chart settings, and favorites without an account.
 - Static export: generate a site that can be deployed to GitHub Pages.
 - Offline app shell: cache the main pages with a web manifest and Service Worker.
