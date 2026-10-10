@@ -169,3 +169,115 @@ magnitude: 6.8
 note: 需要合適濾鏡、暗空與長時間曝光；肉眼與小型望遠鏡不容易直接看見馬頭輪廓。
 nearbyStars: Alnitak, M42, Flame Nebula
 searchGuide: 以獵戶座腰帶最東側的參宿一（Alnitak）為定位點，向南尋找發射星雲 IC 434。
+
+## NGC 869｜英仙座雙星團西側
+id: ngc869-markdown
+aliases: h Persei, Double Cluster
+type: 疏散星團
+constellation: 英仙座
+ra: 02h 19m 00s
+dec: +57° 08′
+angularSize: 30′
+distance: 7,500 光年
+magnitude: 5.3
+note: 與 NGC 884 組成英仙座雙星團，雙筒望遠鏡即可看到兩片密集星群。
+nearbyStars: NGC 884, Mirfak, Algol
+searchGuide: 從仙后座 W 形向東南尋找，雙星團位於英仙座與仙后座之間的銀河帶。
+
+## NGC 884｜英仙座雙星團東側
+id: ngc884-markdown
+aliases: χ Persei, Double Cluster
+type: 疏散星團
+constellation: 英仙座
+ra: 02h 22m 00s
+dec: +57° 07′
+angularSize: 30′
+distance: 7,500 光年
+magnitude: 6.1
+note: 與 NGC 869 同視野，是北半球冬季最漂亮的雙筒目標之一。
+nearbyStars: NGC 869, Mirfak, Algol
+searchGuide: 先找到 NGC 869，向東移動約半度即可看到另一團星群。
+
+## NGC 1499｜加州星雲
+id: ngc1499-markdown
+aliases: California Nebula
+type: 發射星雲
+constellation: 英仙座
+ra: 04h 03m 18s
+dec: +36° 22′
+angularSize: 145′ × 40′
+distance: 1,000 光年
+magnitude: 6.0
+note: 面積很大、表面亮度低，窄頻濾鏡與廣角構圖比目視更適合。
+nearbyStars: Mirfak, Pleiades M45, Algol
+searchGuide: 以英仙座最亮星 Mirfak 為定位，向東北延伸搜尋長條狀星雲。
+
+## NGC 2024｜火焰星雲
+id: ngc2024-markdown
+aliases: Flame Nebula, Sh2-277
+type: 發射星雲
+constellation: 獵戶座
+ra: 05h 41m 54s
+dec: −01° 51′
+angularSize: 30′
+distance: 1,400 光年
+magnitude: 10.0
+note: 靠近參宿一，暗塵帶在窄頻或長曝光影像中很明顯。
+nearbyStars: Alnitak, IC 434, M42
+searchGuide: 以獵戶座腰帶最東側參宿一為中心，火焰星雲就在其東側附近。
+
+## IC 1805｜心臟星雲
+id: ic1805-markdown
+aliases: Heart Nebula, Sh2-190
+type: 發射星雲
+constellation: 仙后座
+ra: 02h 33m 00s
+dec: +61° 27′
+angularSize: 150′
+distance: 7,500 光年
+magnitude: 6.5
+note: 廣角窄頻攝影常見的大型目標，肉眼不易直接看見。
+nearbyStars: IC 1848, Schedar, Double Cluster
+searchGuide: 從仙后座中央向東尋找，適合搭配胎兒星雲做雙目標構圖。
+
+## IC 1848｜胎兒星雲
+id: ic1848-markdown
+aliases: Soul Nebula, Sh2-199
+type: 發射星雲
+constellation: 仙后座
+ra: 02h 51m 00s
+dec: +60° 26′
+angularSize: 150′
+distance: 7,500 光年
+magnitude: 6.5
+note: 與心臟星雲相鄰，適合用同一套廣角窄頻構圖拍攝。
+nearbyStars: IC 1805, Schedar, NGC 869
+searchGuide: 找到心臟星雲後向東南尋找，兩者常被一起稱為 Heart and Soul。
+
+## NGC 6992｜東面紗星雲
+id: ngc6992-markdown
+aliases: Eastern Veil Nebula, Veil Nebula
+type: 超新星殘骸
+constellation: 天鵝座
+ra: 20h 56m 19s
+dec: +31° 43′
+angularSize: 70′ × 6′
+distance: 2,400 光年
+magnitude: 7.0
+note: 面紗星雲東側的弧形絲狀結構，窄頻濾鏡效果非常明顯。
+nearbyStars: NGC 6960, NGC 6995, Deneb
+searchGuide: 以天鵝座與天津四為大方向，使用廣角星圖尋找面紗環形結構。
+
+## NGC 6960｜西面紗星雲
+id: ngc6960-markdown
+aliases: Western Veil Nebula, Witch's Broom
+type: 超新星殘骸
+constellation: 天鵝座
+ra: 20h 45m 38s
+dec: +30° 43′
+angularSize: 210′ × 3′
+distance: 2,400 光年
+magnitude: 7.0
+note: 面紗星雲西側細長結構，會穿過一顆前景恆星附近。
+nearbyStars: NGC 6992, 52 Cygni, Deneb
+searchGuide: 先找天鵝座，再用東西面紗的相對位置與星圖核對。
