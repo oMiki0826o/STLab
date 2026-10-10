@@ -20,9 +20,9 @@
 
 ### 關於
 
-Small Things Lab 是一系列漂亮, 實用且離線友善的單一用途 Web App.
+Small Things Lab 是一組放在瀏覽器裡就能用的小工具。每個工具只處理一件事，資料也留在自己的裝置上。
 
-本專案使用 Next.js, React 與 TypeScript 開發, 並透過 Static Export 部署到 GitHub Pages. 使用者不需要登入, 後端, 資料庫或 API 金鑰. 課表, 圖表設定與天體收藏會保存在瀏覽器本機.
+本專案使用 Next.js、React 與 TypeScript，部署在 GitHub Pages。沒有登入、後端或資料庫；課表、圖表設定與收藏都保存在瀏覽器本機。
 
 目前版本為 `v0.1.0`, 包含三個工具與基礎離線 App Shell. 原始 HTML prototype 仍保留在專案中, 用於比較與回歸檢查.
 
