@@ -18,6 +18,15 @@ PAGES = [
     ROOT / 'table-studio' / 'index.html',
     ROOT / 'astro-catalog' / 'index.html',
 ]
+EXPORTED_ROUTES = [
+    'astro/index.html',
+    'astro/tools/index.html',
+    'astro/tonight/index.html',
+    'astro/planner/index.html',
+    'astro/compare/index.html',
+    'astro/deep-sky/index.html',
+    'astro/object/m42/index.html',
+]
 
 
 # ── HTML 結構檢查 ──
@@ -66,6 +75,11 @@ def main():
     if errors:
         print('\n'.join(f'ERROR {error}' for error in errors))
         raise SystemExit(1)
+    exported_root = ROOT / 'out'
+    missing = [route for route in EXPORTED_ROUTES if not (exported_root / route).exists()]
+    if missing:
+        raise SystemExit('ERROR missing exported routes: ' + ', '.join(missing))
+    print(f'CHECK out/: {len(EXPORTED_ROUTES)} Next.js routes present')
     print(f'OK: {len(PAGES)} static HTML pages validated')
 
 
