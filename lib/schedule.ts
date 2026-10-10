@@ -10,3 +10,11 @@ export function parseScheduleProject(text: string, fallback: SchedulePlan): { ti
   } catch { /* handled by fallback */ }
   return { plan: parseSchedule(text, fallback) };
 }
+
+export function swapScheduleCells(plan: SchedulePlan, first: string, second: string): SchedulePlan {
+  const next = { ...plan };
+  const firstValue = next[first] ?? "";
+  next[first] = next[second] ?? "";
+  next[second] = firstValue;
+  return next;
+}

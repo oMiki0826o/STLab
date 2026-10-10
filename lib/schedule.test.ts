@@ -1,4 +1,5 @@
-import { describe, expect, it } from "vitest"; import { parseSchedule, parseScheduleProject } from "./schedule";
+import { describe, expect, it } from "vitest"; import { parseSchedule, parseScheduleProject, swapScheduleCells } from "./schedule";
 describe("schedule helpers",()=>{it("keeps known cells when importing",()=>expect(parseSchedule('{"早上-一":"物理","unknown":"x"}',{"早上-一":"","上午-一":""})).toEqual({"早上-一":"物理","上午-一":""}));it("falls back on invalid JSON",()=>expect(parseSchedule("bad",{"早上-一":""})).toEqual({"早上-一":""}));});
 describe("schedule projects",()=>{it("restores project title and plan",()=>expect(parseScheduleProject('{"title":"研究週","plan":{"早上-一":"讀書"}}',{"早上-一":"","上午-一":""})).toEqual({title:"研究週",plan:{"早上-一":"讀書","上午-一":""}}));});
 describe("alternate weeks",()=>{it("keeps A and B week cells as separate keys",()=>expect(parseScheduleProject('{"title":"雙週課表","plan":{"A-第一節-一":"數學","B-第一節-一":"物理"}}',{"A-第一節-一":"","B-第一節-一":""})).toEqual({title:"雙週課表",plan:{"A-第一節-一":"數學","B-第一節-一":"物理"}}));});
+describe("schedule editing",()=>{it("swaps cells without mutating the source",()=>{const source={a:"國文",b:"數學"};expect(swapScheduleCells(source,"a","b")).toEqual({a:"數學",b:"國文"});expect(source).toEqual({a:"國文",b:"數學"});});});
