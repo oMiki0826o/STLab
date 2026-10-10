@@ -26,8 +26,8 @@ NEXT_ROUTES = [
     "404.html",
 ]
 ROUTE_CONTENT = {
-    "schedule/index.html": ("Schedule Studio", "匯出 JSON", "下載 PNG"),
-    "table/index.html": ("Table Studio", "匯出 CSV", "實驗圖表"),
+    "schedule/index.html": ("Schedule Studio", "匯出 JSON", "下載 PNG", "A 週", "B 週"),
+    "table/index.html": ("Table Studio", "匯出 CSV", "實驗圖表", "匯入 JSON"),
     "exam/index.html": ("Exam Planner", "匯出 JSON", "準備度"),
 }
 

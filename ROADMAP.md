@@ -8,6 +8,7 @@
 - Table Studio：資料列／欄編輯、CSV／JSON 匯入匯出、X／Y 軸與資料點編輯、SVG 預覽、PNG 匯出與輸入驗證。
 - Exam Planner：考試倒數、準備度、任務、優先程度、備註、JSON 匯入匯出與列印版面。
 - 共同基礎：深淺主題、離線 App Shell、Static Export、TypeScript、單元測試與靜態路由檢查。
+- 靜態內容契約：建置後會檢查三個工具的主要操作入口，不讓頁面退化成只有標題的空殼。
 
 ## 目前限制
 
