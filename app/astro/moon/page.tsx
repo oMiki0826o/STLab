@@ -1,7 +1,0 @@
-"use client";
-import Link from "next/link";
-import { useMemo, useState } from "react";
-import ThemeToggle from "../../../components/theme-toggle";
-function age(date:string){const known=Date.UTC(2000,0,6,18,14);return ((new Date(`${date}T00:00:00Z`).getTime()-known)/86400000%29.530588+29.530588)%29.530588}
-function phaseName(value:number){return value<1||value>28.5?"新月":value<7.4?"眉月":value<14.8?"上弦":value<22.1?"盈凸月":value<25?"滿月後":value<28.5?"下弦":"殘月"}
-export default function MoonExplorer(){const [date,setDate]=useState(new Date().toISOString().slice(0,10));const lunarAge=useMemo(()=>age(date),[date]);const illumination=(1-Math.cos(lunarAge/29.530588*Math.PI*2))/2*100;const phase=phaseName(lunarAge);return <main className="app"><div className="app-header"><div><Link className="back" href="/astro/tools">← Astro Tools</Link><h1>Moon Phase Explorer</h1><p className="muted">先看月光，再決定今晚要不要拍暗淡的星雲與星系。</p></div><ThemeToggle/></div><section className="panel moon-panel"><label className="field-label">選擇日期<input className="field" type="date" value={date} onChange={e=>setDate(e.target.value)}/></label><div className="moon-visual" style={{["--moon-progress" as string]:`${illumination}%`}} aria-label={`月相：${phase}`}><div className="moon-disc"/></div><div className="moon-reading"><span className="eyebrow">{phase}</span><h2>月齡 {lunarAge.toFixed(1)} 日</h2><p className="muted">照明比例約 {illumination.toFixed(0)}%。這是規劃用的近似值，不取代當地月出月落資料。</p></div></section></main>}

@@ -16,21 +16,8 @@ PAGES = [
     ROOT / 'index.html',
     ROOT / 'schedule-studio' / 'index.html',
     ROOT / 'table-studio' / 'index.html',
-    ROOT / 'astro-catalog' / 'index.html',
 ]
-EXPORTED_ROUTES = [
-    'astro/index.html',
-    'astro/tools/index.html',
-    'astro/tonight/index.html',
-    'astro/planner/index.html',
-    'astro/compare/index.html',
-    'astro/deep-sky/index.html',
-    'astro/constellations/index.html',
-    'astro/moon/index.html',
-    'astro/equipment/index.html',
-    'astro/exposure/index.html',
-    'astro/object/m42/index.html',
-]
+EXPORTED_ROUTES = []
 
 
 # ── HTML 結構檢查 ──

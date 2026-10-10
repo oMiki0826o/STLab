@@ -22,7 +22,7 @@
 
 Small Things Lab 是一組放在瀏覽器裡就能用的小工具。每個工具只處理一件事，資料也留在自己的裝置上。
 
-本專案使用 Next.js、React 與 TypeScript，部署在 GitHub Pages。沒有登入、後端或資料庫；課表、圖表設定與收藏都保存在瀏覽器本機。
+本專案使用 Next.js、React 與 TypeScript，部署在 GitHub Pages。沒有登入、後端或資料庫；課表、圖表設定與考試資料都保存在瀏覽器本機。天文工具已拆分至獨立的 AstroLab 倉庫。
 
 目前版本為 `v0.1.0`, 包含三個工具與基礎離線 App Shell. 原始 HTML prototype 仍保留在專案中, 用於比較與回歸檢查.
 
@@ -32,7 +32,6 @@ Small Things Lab 是一組放在瀏覽器裡就能用的小工具。每個工具
 
 - Schedule Studio: 編輯每週課表, 匯入或匯出 JSON 專案, 並將資料保存在瀏覽器本機.
 - Table Studio: 編輯資料表、CSV/JSON 匯入匯出；輸入 X/Y 座標, 設定軸名稱, 單位, 最大值與刻度間距, 即時產生 SVG 折線圖並可下載 PNG.
-- AstroCatalog: 搜尋精選天體資料, 依類型篩選並保存收藏.
 - Local storage: 不需帳號即可保存課表, 圖表設定與收藏.
 - Static export: 產生可部署到 GitHub Pages 的靜態網站.
 - Offline app shell: 使用 manifest 與 Service Worker 快取主要頁面.
@@ -103,7 +102,7 @@ NEXT_PUBLIC_BASE_PATH=/STLab npm run build
 
 Small Things Lab is a collection of beautiful, practical, and offline-friendly single-purpose web apps.
 
-The project is built with Next.js, React, and TypeScript, and is deployed to GitHub Pages through Static Export. It requires no account, backend, database, or API key. Schedules, chart settings, and astronomy favorites remain in the browser.
+The project is built with Next.js, React, and TypeScript, and is deployed to GitHub Pages through Static Export. It requires no account, backend, database, or API key. Schedules, chart settings, and exam plans remain in the browser. Astronomy tools now live in the independent AstroLab repository.
 
 The current version is `v0.1.0`. It includes three tools and a basic offline app shell. The original HTML prototype is kept in the repository for comparison and regression checks.
 
@@ -113,7 +112,6 @@ The project follows AI Development Governance: understand existing behavior befo
 
 - Schedule Studio: edit a weekly schedule, import or export a JSON project, and keep it in browser storage.
 - Table Studio: edit tabular data with CSV/JSON import/export, enter X/Y coordinates, configure labels, units, limits, and tick spacing, and generate a live SVG line chart or PNG.
-- AstroCatalog: search a curated astronomy catalog, filter by type, and save favorites.
 - Local storage: save schedules, chart settings, and favorites without an account.
 - Static export: generate a site that can be deployed to GitHub Pages.
 - Offline app shell: cache the main pages with a web manifest and Service Worker.
